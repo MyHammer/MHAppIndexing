@@ -1,0 +1,6 @@
+framework module Pods_MHAppIndexing_Example {
+  umbrella header "Pods-MHAppIndexing_Example-umbrella.h"
+
+  export *
+  module * { export * }
+}

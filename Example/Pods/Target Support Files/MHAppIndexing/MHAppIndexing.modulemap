@@ -1,0 +1,6 @@
+framework module MHAppIndexing {
+  umbrella header "MHAppIndexing-umbrella.h"
+
+  export *
+  module * { export * }
+}

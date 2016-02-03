@@ -12,9 +12,9 @@
 		607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 607FACD91AFB9204008FA782 /* Main.storyboard */; };
 		607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDC1AFB9204008FA782 /* Images.xcassets */; };
 		607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDE1AFB9204008FA782 /* LaunchScreen.xib */; };
-		607FACEC1AFB9204008FA782 /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACEB1AFB9204008FA782 /* Tests.swift */; };
 		744B50F3E3DDEF7E92329049 /* Pods_MHAppIndexing_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F7ADFFFFC74286F9904B5A8 /* Pods_MHAppIndexing_Tests.framework */; };
 		CD3985B740E715E606A9C2BC /* Pods_MHAppIndexing_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E74D3D9AF1D4661BF8A25384 /* Pods_MHAppIndexing_Example.framework */; };
+		EEAFDF021C6260FC003EA4A5 /* Test.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEAFDF011C6260FC003EA4A5 /* Test.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,11 +42,11 @@
 		607FACDF1AFB9204008FA782 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		607FACE51AFB9204008FA782 /* MHAppIndexing_Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MHAppIndexing_Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACEA1AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		607FACEB1AFB9204008FA782 /* Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
 		73C489A30C76DBB56AF2858B /* Pods-MHAppIndexing_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MHAppIndexing_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MHAppIndexing_Tests/Pods-MHAppIndexing_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		CDF0A31930815B885FDCC2D4 /* Pods-MHAppIndexing_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MHAppIndexing_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MHAppIndexing_Tests/Pods-MHAppIndexing_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		E74D3D9AF1D4661BF8A25384 /* Pods_MHAppIndexing_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MHAppIndexing_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EE1ED890A489E47EA374CA2A /* Pods-MHAppIndexing_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MHAppIndexing_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-MHAppIndexing_Example/Pods-MHAppIndexing_Example.release.xcconfig"; sourceTree = "<group>"; };
+		EEAFDF011C6260FC003EA4A5 /* Test.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Test.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,7 +115,7 @@
 		607FACE81AFB9204008FA782 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
-				607FACEB1AFB9204008FA782 /* Tests.swift */,
+				EEAFDF011C6260FC003EA4A5 /* Test.swift */,
 				607FACE91AFB9204008FA782 /* Supporting Files */,
 			);
 			path = Tests;
@@ -368,7 +368,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				607FACEC1AFB9204008FA782 /* Tests.swift in Sources */,
+				EEAFDF021C6260FC003EA4A5 /* Test.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

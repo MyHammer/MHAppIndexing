@@ -1,0 +1,6 @@
+framework module Pods_MHAppIndexing_Tests {
+  umbrella header "Pods-MHAppIndexing_Tests-umbrella.h"
+
+  export *
+  module * { export * }
+}
