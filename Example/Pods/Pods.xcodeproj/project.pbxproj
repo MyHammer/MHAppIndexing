@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		02BF9988CC94A01E7CB6049694390020 /* NMBExceptionCapture.h in Headers */ = {isa = PBXBuildFile; fileRef = 40FBD52025077E5788ADCE71EF040393 /* NMBExceptionCapture.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		02DF5BD2281BA10105A447F95FCF8CF3 /* BeLogical.swift in Sources */ = {isa = PBXBuildFile; fileRef = B011BCE1507648ECA7586CF7DABF6F4C /* BeLogical.swift */; };
-		03005B50CE40C5E5386800B2238CE720 /* ReplaceMe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6536EBB43E0F0AD6271B7FB3AD687E6C /* ReplaceMe.swift */; };
 		039FDDEC63A3FD4121DA5F3F6B8D139E /* NSString+QCKSelectorName.h in Headers */ = {isa = PBXBuildFile; fileRef = 64F492985EB6550A418DD3DB1BCDE146 /* NSString+QCKSelectorName.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		04492D3D953605AA0FD797E2CD440378 /* Pods-MHAppIndexing_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = E1D99200A9E4D0D28EFEE3372E66EE7C /* Pods-MHAppIndexing_Example-dummy.m */; };
 		0492354DA7EF0C9068F7B4E8F74001B0 /* FailureMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25961731CF4F7537A5ECD61A000A150C /* FailureMessage.swift */; };
@@ -83,6 +82,12 @@
 		E36C5201AE7F1CBB25F9D2E7CBFC3C20 /* Match.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0843BD7412E439120C081E8D9FE0F80 /* Match.swift */; };
 		E6E7B15FAD6C56681511813DB2666478 /* AssertionRecorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = B84D274316F8C6F9695294FB40D7596F /* AssertionRecorder.swift */; };
 		E71CAC72A35190FAFC3F1B472384BD60 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E351727CD07BB90B2A3CAE2C2433F6C5 /* Foundation.framework */; };
+		EEA86E8B1C6E24B60096965E /* MHCoreSpotlightManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEA86E8A1C6E24B60096965E /* MHCoreSpotlightManager.swift */; };
+		EEA86E8C1C6E24B60096965E /* MHCoreSpotlightManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEA86E8A1C6E24B60096965E /* MHCoreSpotlightManager.swift */; };
+		EEA86E8F1C6E26770096965E /* MHCoreSpotlightObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEA86E8E1C6E26770096965E /* MHCoreSpotlightObject.swift */; };
+		EEA86E901C6E26770096965E /* MHCoreSpotlightObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEA86E8E1C6E26770096965E /* MHCoreSpotlightObject.swift */; };
+		EEA86E921C6E26F30096965E /* MHUserActivityObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEA86E911C6E26F30096965E /* MHUserActivityObject.swift */; };
+		EEA86E931C6E26F30096965E /* MHUserActivityObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEA86E911C6E26F30096965E /* MHUserActivityObject.swift */; };
 		F10FD3129985704FA1610F84FB98EDF5 /* Stringers.swift in Sources */ = {isa = PBXBuildFile; fileRef = E31CE50F8B4B99D3C229D2438892ED5B /* Stringers.swift */; };
 		F1D4A8A1FC68EFA7F45945908D70A352 /* BeNil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02297D692E5CA1B1C21CCCDA1853BA44 /* BeNil.swift */; };
 		F375B0C5E951B2ED75F2BF07DB77D3DA /* QCKDSL.m in Sources */ = {isa = PBXBuildFile; fileRef = 2543809E4D3D9755B94735346ACDFF03 /* QCKDSL.m */; };
@@ -180,7 +185,6 @@
 		62241019A9DFE31F82A2CDF8690A163C /* QuickSpec.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = QuickSpec.m; path = Quick/QuickSpec.m; sourceTree = "<group>"; };
 		64F0BEE5B67844F0E333920C2CB3416C /* SuiteHooks.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SuiteHooks.swift; path = Quick/Hooks/SuiteHooks.swift; sourceTree = "<group>"; };
 		64F492985EB6550A418DD3DB1BCDE146 /* NSString+QCKSelectorName.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSString+QCKSelectorName.h"; path = "Quick/NSString+QCKSelectorName.h"; sourceTree = "<group>"; };
-		6536EBB43E0F0AD6271B7FB3AD687E6C /* ReplaceMe.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ReplaceMe.swift; sourceTree = "<group>"; };
 		6727AA774C6723AFCA6CFCEF099071C7 /* Contain.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Contain.swift; path = Nimble/Matchers/Contain.swift; sourceTree = "<group>"; };
 		69578BBC16AAA12ED9630E2036580E94 /* BeLessThan.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BeLessThan.swift; path = Nimble/Matchers/BeLessThan.swift; sourceTree = "<group>"; };
 		69A1AA2E4CDFA7B6FD9B4F253CAF481F /* BeIdenticalTo.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BeIdenticalTo.swift; path = Nimble/Matchers/BeIdenticalTo.swift; sourceTree = "<group>"; };
@@ -237,6 +241,9 @@
 		EACA3667D02269421B929A2CCE47C897 /* Pods-MHAppIndexing_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-MHAppIndexing_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
 		EC56E4ADC33325FCFD2C96C948EED5A2 /* Pods_MHAppIndexing_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MHAppIndexing_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		ECB4882E47E7537D32F4C677DF4F0B43 /* AdapterProtocols.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AdapterProtocols.swift; path = Nimble/Adapters/AdapterProtocols.swift; sourceTree = "<group>"; };
+		EEA86E8A1C6E24B60096965E /* MHCoreSpotlightManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MHCoreSpotlightManager.swift; sourceTree = "<group>"; };
+		EEA86E8E1C6E26770096965E /* MHCoreSpotlightObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MHCoreSpotlightObject.swift; path = Protocols/MHCoreSpotlightObject.swift; sourceTree = "<group>"; };
+		EEA86E911C6E26F30096965E /* MHUserActivityObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MHUserActivityObject.swift; path = Protocols/MHUserActivityObject.swift; sourceTree = "<group>"; };
 		F1D4A64A54F414359EC782444B27597B /* QuickConfiguration.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = QuickConfiguration.h; path = Quick/Configuration/QuickConfiguration.h; sourceTree = "<group>"; };
 		F5F4CE0DE16848CBDA8A93366A52BEF7 /* NMBExceptionCapture.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = NMBExceptionCapture.m; path = Nimble/objc/NMBExceptionCapture.m; sourceTree = "<group>"; };
 		F689A549CFB432AE0684F3EA3BA8D2FF /* Poll.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Poll.swift; path = Nimble/Utils/Poll.swift; sourceTree = "<group>"; };
@@ -326,7 +333,7 @@
 		189B9032BB52AB9D5855FFB2DDB9935D /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				6536EBB43E0F0AD6271B7FB3AD687E6C /* ReplaceMe.swift */,
+				EEA86E8A1C6E24B60096965E /* MHCoreSpotlightManager.swift */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -453,6 +460,7 @@
 		C53844E85942A01BE1C30BCCAC8A31B5 /* Pod */ = {
 			isa = PBXGroup;
 			children = (
+				EEA86E8D1C6E26440096965E /* Protocols */,
 				189B9032BB52AB9D5855FFB2DDB9935D /* Classes */,
 			);
 			path = Pod;
@@ -552,6 +560,15 @@
 				CE11871280ECBD3FF721516DDBA2A707 /* Quick.framework */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		EEA86E8D1C6E26440096965E /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				EEA86E8E1C6E26770096965E /* MHCoreSpotlightObject.swift */,
+				EEA86E911C6E26F30096965E /* MHUserActivityObject.swift */,
+			);
+			name = Protocols;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -724,7 +741,7 @@
 		D41D8CD98F00B204E9800998ECF8427E /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0700;
+				LastSwiftUpdateCheck = 0720;
 				LastUpgradeCheck = 0700;
 			};
 			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
@@ -788,6 +805,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EEA86E931C6E26F30096965E /* MHUserActivityObject.swift in Sources */,
+				EEA86E8C1C6E24B60096965E /* MHCoreSpotlightManager.swift in Sources */,
+				EEA86E901C6E26770096965E /* MHCoreSpotlightObject.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -868,7 +888,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				06E75EC1313CC4933100EA31FE781407 /* MHAppIndexing-dummy.m in Sources */,
-				03005B50CE40C5E5386800B2238CE720 /* ReplaceMe.swift in Sources */,
+				EEA86E921C6E26F30096965E /* MHUserActivityObject.swift in Sources */,
+				EEA86E8F1C6E26770096965E /* MHCoreSpotlightObject.swift in Sources */,
+				EEA86E8B1C6E24B60096965E /* MHCoreSpotlightManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -966,7 +988,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				STRIP_INSTALLED_PRODUCT = NO;
 				SYMROOT = "${SRCROOT}/../build";
 				VALIDATE_PRODUCT = YES;
@@ -1115,7 +1137,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				ONLY_ACTIVE_ARCH = YES;
 				STRIP_INSTALLED_PRODUCT = NO;
 				SYMROOT = "${SRCROOT}/../build";
@@ -1126,10 +1148,13 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = E8287A2309F498784FE15C92982A156A /* MHAppIndexing.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = MHAppIndexing;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				WRAPPER_EXTENSION = bundle;
 			};
 			name = Debug;
@@ -1148,7 +1173,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/MHAppIndexing/MHAppIndexing-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/MHAppIndexing/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MODULEMAP_FILE = "Target Support Files/MHAppIndexing/MHAppIndexing.modulemap";
 				MTL_ENABLE_DEBUG_INFO = YES;
@@ -1257,7 +1282,9 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = E8287A2309F498784FE15C92982A156A /* MHAppIndexing.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = MHAppIndexing;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
@@ -1279,7 +1306,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/MHAppIndexing/MHAppIndexing-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/MHAppIndexing/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MODULEMAP_FILE = "Target Support Files/MHAppIndexing/MHAppIndexing.modulemap";
 				MTL_ENABLE_DEBUG_INFO = NO;
