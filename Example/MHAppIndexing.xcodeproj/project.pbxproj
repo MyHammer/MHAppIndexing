@@ -14,6 +14,9 @@
 		607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDE1AFB9204008FA782 /* LaunchScreen.xib */; };
 		744B50F3E3DDEF7E92329049 /* Pods_MHAppIndexing_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F7ADFFFFC74286F9904B5A8 /* Pods_MHAppIndexing_Tests.framework */; };
 		CD3985B740E715E606A9C2BC /* Pods_MHAppIndexing_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E74D3D9AF1D4661BF8A25384 /* Pods_MHAppIndexing_Example.framework */; };
+		E85A364C1C74A456003A8883 /* BeispielTestObjekt.swift in Sources */ = {isa = PBXBuildFile; fileRef = E85A364B1C74A456003A8883 /* BeispielTestObjekt.swift */; };
+		E85A36511C74B6D6003A8883 /* homer.png in Resources */ = {isa = PBXBuildFile; fileRef = E85A36501C74B6D6003A8883 /* homer.png */; };
+		E85A36531C74C0C8003A8883 /* carl.png in Resources */ = {isa = PBXBuildFile; fileRef = E85A36521C74C0C8003A8883 /* carl.png */; };
 		EEAFDF021C6260FC003EA4A5 /* Test.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEAFDF011C6260FC003EA4A5 /* Test.swift */; };
 /* End PBXBuildFile section */
 
@@ -45,6 +48,9 @@
 		73C489A30C76DBB56AF2858B /* Pods-MHAppIndexing_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MHAppIndexing_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MHAppIndexing_Tests/Pods-MHAppIndexing_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		CDF0A31930815B885FDCC2D4 /* Pods-MHAppIndexing_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MHAppIndexing_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MHAppIndexing_Tests/Pods-MHAppIndexing_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		E74D3D9AF1D4661BF8A25384 /* Pods_MHAppIndexing_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MHAppIndexing_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E85A364B1C74A456003A8883 /* BeispielTestObjekt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BeispielTestObjekt.swift; sourceTree = "<group>"; };
+		E85A36501C74B6D6003A8883 /* homer.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = homer.png; sourceTree = "<group>"; };
+		E85A36521C74C0C8003A8883 /* carl.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = carl.png; sourceTree = "<group>"; };
 		EE1ED890A489E47EA374CA2A /* Pods-MHAppIndexing_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MHAppIndexing_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-MHAppIndexing_Example/Pods-MHAppIndexing_Example.release.xcconfig"; sourceTree = "<group>"; };
 		EEAFDF011C6260FC003EA4A5 /* Test.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Test.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -99,6 +105,7 @@
 				607FACDC1AFB9204008FA782 /* Images.xcassets */,
 				607FACDE1AFB9204008FA782 /* LaunchScreen.xib */,
 				607FACD31AFB9204008FA782 /* Supporting Files */,
+				E85A364B1C74A456003A8883 /* BeispielTestObjekt.swift */,
 			);
 			name = "Example for MHAppIndexing";
 			path = MHAppIndexing;
@@ -108,6 +115,8 @@
 			isa = PBXGroup;
 			children = (
 				607FACD41AFB9204008FA782 /* Info.plist */,
+				E85A36501C74B6D6003A8883 /* homer.png */,
+				E85A36521C74C0C8003A8883 /* carl.png */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -215,6 +224,7 @@
 				TargetAttributes = {
 					607FACCF1AFB9204008FA782 = {
 						CreatedOnToolsVersion = 6.3.1;
+						DevelopmentTeam = X988KHFURT;
 					};
 					607FACE41AFB9204008FA782 = {
 						CreatedOnToolsVersion = 6.3.1;
@@ -247,8 +257,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */,
+				E85A36531C74C0C8003A8883 /* carl.png in Resources */,
 				607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */,
 				607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */,
+				E85A36511C74B6D6003A8883 /* homer.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -360,6 +372,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				607FACD81AFB9204008FA782 /* ViewController.swift in Sources */,
+				E85A364C1C74A456003A8883 /* BeispielTestObjekt.swift in Sources */,
 				607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -422,6 +435,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_BITCODE = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -467,6 +481,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_BITCODE = NO;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -489,12 +504,16 @@
 			baseConfigurationReference = 198E4E259EF8054071B017FF /* Pods-MHAppIndexing_Example.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = MHAppIndexing/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MODULE_NAME = ExampleApp;
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -503,12 +522,16 @@
 			baseConfigurationReference = EE1ED890A489E47EA374CA2A /* Pods-MHAppIndexing_Example.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = MHAppIndexing/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MODULE_NAME = ExampleApp;
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};

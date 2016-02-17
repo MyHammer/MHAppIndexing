@@ -82,6 +82,10 @@
 		E36C5201AE7F1CBB25F9D2E7CBFC3C20 /* Match.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0843BD7412E439120C081E8D9FE0F80 /* Match.swift */; };
 		E6E7B15FAD6C56681511813DB2666478 /* AssertionRecorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = B84D274316F8C6F9695294FB40D7596F /* AssertionRecorder.swift */; };
 		E71CAC72A35190FAFC3F1B472384BD60 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E351727CD07BB90B2A3CAE2C2433F6C5 /* Foundation.framework */; };
+		E85A364E1C74AC57003A8883 /* MHImageInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = E85A364D1C74AC57003A8883 /* MHImageInfo.swift */; };
+		E85A364F1C74AEEE003A8883 /* MHImageInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = E85A364D1C74AC57003A8883 /* MHImageInfo.swift */; };
+		E85A36551C74C46D003A8883 /* MHUserActivityManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E85A36541C74C46D003A8883 /* MHUserActivityManager.swift */; };
+		E85A36561C74C472003A8883 /* MHUserActivityManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E85A36541C74C46D003A8883 /* MHUserActivityManager.swift */; };
 		EEA86E8B1C6E24B60096965E /* MHCoreSpotlightManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEA86E8A1C6E24B60096965E /* MHCoreSpotlightManager.swift */; };
 		EEA86E8C1C6E24B60096965E /* MHCoreSpotlightManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEA86E8A1C6E24B60096965E /* MHCoreSpotlightManager.swift */; };
 		EEA86E8F1C6E26770096965E /* MHCoreSpotlightObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEA86E8E1C6E26770096965E /* MHCoreSpotlightObject.swift */; };
@@ -238,6 +242,8 @@
 		E41A31E4949F1319040B8D2BBBF2B5D6 /* QCKDSL.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = QCKDSL.h; path = Quick/DSL/QCKDSL.h; sourceTree = "<group>"; };
 		E43EEEBE209F0CF242FBC231937E6922 /* MatcherFunc.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MatcherFunc.swift; path = Nimble/Wrappers/MatcherFunc.swift; sourceTree = "<group>"; };
 		E8287A2309F498784FE15C92982A156A /* MHAppIndexing.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = MHAppIndexing.xcconfig; sourceTree = "<group>"; };
+		E85A364D1C74AC57003A8883 /* MHImageInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MHImageInfo.swift; sourceTree = "<group>"; };
+		E85A36541C74C46D003A8883 /* MHUserActivityManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MHUserActivityManager.swift; sourceTree = "<group>"; };
 		EACA3667D02269421B929A2CCE47C897 /* Pods-MHAppIndexing_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-MHAppIndexing_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
 		EC56E4ADC33325FCFD2C96C948EED5A2 /* Pods_MHAppIndexing_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MHAppIndexing_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		ECB4882E47E7537D32F4C677DF4F0B43 /* AdapterProtocols.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AdapterProtocols.swift; path = Nimble/Adapters/AdapterProtocols.swift; sourceTree = "<group>"; };
@@ -334,6 +340,8 @@
 			isa = PBXGroup;
 			children = (
 				EEA86E8A1C6E24B60096965E /* MHCoreSpotlightManager.swift */,
+				E85A36541C74C46D003A8883 /* MHUserActivityManager.swift */,
+				E85A364D1C74AC57003A8883 /* MHImageInfo.swift */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -805,6 +813,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E85A364F1C74AEEE003A8883 /* MHImageInfo.swift in Sources */,
+				E85A36561C74C472003A8883 /* MHUserActivityManager.swift in Sources */,
 				EEA86E931C6E26F30096965E /* MHUserActivityObject.swift in Sources */,
 				EEA86E8C1C6E24B60096965E /* MHCoreSpotlightManager.swift in Sources */,
 				EEA86E901C6E26770096965E /* MHCoreSpotlightObject.swift in Sources */,
@@ -887,7 +897,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E85A36551C74C46D003A8883 /* MHUserActivityManager.swift in Sources */,
 				06E75EC1313CC4933100EA31FE781407 /* MHAppIndexing-dummy.m in Sources */,
+				E85A364E1C74AC57003A8883 /* MHImageInfo.swift in Sources */,
 				EEA86E921C6E26F30096965E /* MHUserActivityObject.swift in Sources */,
 				EEA86E8F1C6E26770096965E /* MHCoreSpotlightObject.swift in Sources */,
 				EEA86E8B1C6E24B60096965E /* MHCoreSpotlightManager.swift in Sources */,
@@ -940,6 +952,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_BITCODE = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				INFOPLIST_FILE = "Target Support Files/Pods-MHAppIndexing_Example/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
@@ -1149,6 +1162,7 @@
 			baseConfigurationReference = E8287A2309F498784FE15C92982A156A /* MHAppIndexing.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
+				ENABLE_BITCODE = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = MHAppIndexing;
@@ -1169,6 +1183,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_BITCODE = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_PREFIX_HEADER = "Target Support Files/MHAppIndexing/MHAppIndexing-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/MHAppIndexing/Info.plist";
@@ -1197,6 +1212,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_BITCODE = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				INFOPLIST_FILE = "Target Support Files/Pods-MHAppIndexing_Example/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
@@ -1227,6 +1243,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_BITCODE = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				INFOPLIST_FILE = "Target Support Files/Pods-MHAppIndexing_Tests/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
@@ -1257,6 +1274,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_BITCODE = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				INFOPLIST_FILE = "Target Support Files/Pods-MHAppIndexing_Tests/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
@@ -1283,6 +1301,7 @@
 			baseConfigurationReference = E8287A2309F498784FE15C92982A156A /* MHAppIndexing.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
+				ENABLE_BITCODE = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = MHAppIndexing;
@@ -1302,6 +1321,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_BITCODE = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_PREFIX_HEADER = "Target Support Files/MHAppIndexing/MHAppIndexing-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/MHAppIndexing/Info.plist";

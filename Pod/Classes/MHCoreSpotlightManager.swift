@@ -12,21 +12,33 @@ import MobileCoreServices
 
 let searchItemDaysTillExpiration = 30
 
-class MHCoreSpotlightManager: NSObject {
+public class MHCoreSpotlightManager: NSObject {
     
-    static let sharedInstance = MHCoreSpotlightManager()
+    public static let sharedInstance = MHCoreSpotlightManager()
     
     override init() {
         super.init()
     }
     
-    func addObjectToSearchIndex(searchObject: MHCoreSpotlightObject) {
+    public func addObjectToSearchIndex(searchObject: MHCoreSpotlightObject) {
         let attributes: CSSearchableItemAttributeSet = CSSearchableItemAttributeSet(itemContentType: kUTTypeImage as String)
         attributes.relatedUniqueIdentifier = searchObject.uniqueIdentifier
         attributes.title = searchObject.title
         attributes.contentDescription = searchObject.contentDescription
         attributes.keywords = searchObject.keywords
-        
+		
+		if let imageInfo:MHImageInfo = searchObject.imageInfo {
+			if let assetFilename = imageInfo.assetImageName {
+				if let image = UIImage(named: assetFilename) {
+					let imageData = UIImagePNGRepresentation(image)
+					attributes.thumbnailData = imageData
+				}
+			} else if let imageFileName = NSBundle.mainBundle().pathForResource(imageInfo.bundleImageName, ofType: imageInfo.bundleImageType) {
+				attributes.thumbnailURL = NSURL.fileURLWithPath(imageFileName)
+			}
+		}
+		
+		addSearchableItemToCoreSpotlight(searchObject.uniqueIdentifier, domainId: searchObject.domainIdentifier, attributes: attributes)
     }
     
     func addSearchableItemToCoreSpotlight(uniqueId: String, domainId: String, attributes: CSSearchableItemAttributeSet) {
@@ -36,5 +48,16 @@ class MHCoreSpotlightManager: NSObject {
         let expDate: NSDate = NSDate()
         let timeInterval: NSTimeInterval = NSTimeInterval(60 * 60 * 24 * searchItemDaysTillExpiration)
         item.expirationDate = expDate.dateByAddingTimeInterval(timeInterval)
+		CSSearchableIndex.defaultSearchableIndex().indexSearchableItems([item]) { (error: NSError?) -> Void in
+			if (error != nil) {
+				NSLog("Search item NOT indexed because error: " + (error?.description)!);
+			} else {
+				if let attributesTitle = attributes.title {
+					NSLog("Search item indexed with title: " + attributesTitle);
+				} else {
+					NSLog("Search item indexed with unique identifier: " + uniqueIdentifier);
+				}
+			}
+		}
     }
 }

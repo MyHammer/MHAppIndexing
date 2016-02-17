@@ -6,8 +6,13 @@
 //
 //
 
-import Foundation
+import UIKit
 
-protocol MHUserActivityObject: MHCoreSpotlightObject {
-    
+public protocol MHUserActivityObject: MHCoreSpotlightObject {
+	var userInfo:[String: NSSecureCoding]? { get }
+	var eligibleForSearch:Bool { get }
+	var eligibleForPublicIndexing:Bool { get }
+	var eligibleForHandoff:Bool { get }
+	var webpageURL:NSURL? { get }
+	var expirationDate:NSDate? { get }
 }
