@@ -13,7 +13,8 @@ import MobileCoreServices
 public class MHUserActivityManager: NSObject, NSUserActivityDelegate {
 	
 	public static let sharedInstance = MHUserActivityManager()
-	var activities:[NSUserActivity]
+	var activities: NSMutableArray
+    var didStartMakingActivitiesCurrent = false
 	
 	override init() {
 		self.activities = []
@@ -64,22 +65,44 @@ public class MHUserActivityManager: NSObject, NSUserActivityDelegate {
 	}
 	
 	func makeActivityCurrent(activity: NSUserActivity) {
-		self.activities.append(activity)
-		
-		activity.becomeCurrent()
-		
-//		dispatch_after(dispatch_time(DISPATCH_TIME_NOW, Int64(3 * Double(NSEC_PER_SEC))), dispatch_get_main_queue()) { () -> Void in
-//			activity.becomeCurrent()
-//		}
+		self.activities.addObject(activity)
+        if (!self.didStartMakingActivitiesCurrent) {
+            self.didStartMakingActivitiesCurrent = true
+            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, Int64(3 * Double(NSEC_PER_SEC))), dispatch_get_main_queue()) { () -> Void in
+                self.makeFirstActivityCurrent()
+            }
+        }
 	}
+    
+    func makeFirstActivityCurrent() {
+        let firstActivity = self.activities.firstObject
+        firstActivity?.becomeCurrent()
+        if let activityTitle = firstActivity?.title {
+            NSLog("UserActivity will become current with title: " + activityTitle)
+        } else {
+            NSLog("UserActivity will become current")
+        }
+    }
 	
 	// MARK: - NSUserActivityDelegate methods
 	
 	public func userActivityWillSave(userActivity: NSUserActivity) {
-		if let activityTitle = userActivity.title {
-			NSLog("UserActivity will save with title: " + activityTitle)	
-		} else {
-			NSLog("UserActivity will save")
-		}
+        if let activityTitle = userActivity.title {
+            NSLog("UserActivity will save with title: " + activityTitle)
+        } else {
+            NSLog("UserActivity will save")
+        }
+        if self.activities.count > 0 {
+            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, Int64(3 * Double(NSEC_PER_SEC))), dispatch_get_main_queue()) { () -> Void in
+                self.activities.removeObject(userActivity)
+                if self.activities.count > 0 {
+                    self.makeFirstActivityCurrent()
+                } else {
+                    self.didStartMakingActivitiesCurrent = false
+                }
+            }
+        } else {
+            self.didStartMakingActivitiesCurrent = false
+        }
 	}
 }

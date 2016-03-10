@@ -13,6 +13,6 @@ public protocol MHUserActivityObject: MHCoreSpotlightObject {
 	var eligibleForSearch:Bool { get }
 	var eligibleForPublicIndexing:Bool { get }
 	var eligibleForHandoff:Bool { get }
-	var webpageURL:NSURL? { get }
+	var webpageURL:NSURL? { get } // MUST be unique
 	var expirationDate:NSDate? { get }
 }

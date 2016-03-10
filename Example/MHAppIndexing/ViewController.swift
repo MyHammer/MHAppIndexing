@@ -23,24 +23,75 @@ class ViewController: UIViewController {
 
 	
 	@IBAction func legLosButtonTouched(sender: AnyObject) {
-		let beispielEins  = BeispielTestObjekt()
-		beispielEins.domainIdentifier = "com.sowas.tolles.hier"
-		beispielEins.uniqueIdentifier = "47110820"
-		beispielEins.title = "5Hat geklappt, das mit dem CoreSpotlight"
-		beispielEins.contentDescription = "Hier steht die ContentDescription"
-		beispielEins.keywords = ["apfel", "birne", "banane"]
-		//beispielEins.imageInfo = MHImageInfo(bundleImageName: "homer", bundleImageType: "png")
-		beispielEins.imageInfo = MHImageInfo(assetImageName: "carl")
-		
-		//UserActivity stuff
-		beispielEins.userInfo = ["objectId":beispielEins.uniqueIdentifier]
-		beispielEins.eligibleForSearch = true
-		beispielEins.eligibleForPublicIndexing = true
-		beispielEins.eligibleForHandoff = false
-		beispielEins.webpageURL = NSURL(string: "https://www.myhammer.de")
+		let beispielEins  = self.beispielObjekt1()
+        let beispielZwei  = self.beispielObjekt2()
+        let beispielDrei  = self.beispielObjekt3()
 		
 		//MHCoreSpotlightManager.sharedInstance.addObjectToSearchIndex(beispielEins)
-		MHUserActivityManager.sharedInstance.addObjectToSearchIndex(beispielEins)
+		
+        MHUserActivityManager.sharedInstance.addObjectToSearchIndex(beispielEins)
+        MHUserActivityManager.sharedInstance.addObjectToSearchIndex(beispielZwei)
+        MHUserActivityManager.sharedInstance.addObjectToSearchIndex(beispielDrei)
 	}
+    
+    func beispielObjekt1() -> BeispielTestObjekt {
+        let beispiel  = BeispielTestObjekt()
+        beispiel.domainIdentifier = "com.sowas.tolles.hier"
+        beispiel.uniqueIdentifier = "123456789"
+        beispiel.title = "Beispiel7"
+        beispiel.contentDescription = "Hier steht die ContentDescription1"
+        beispiel.keywords = ["apfel", "birne", "banane"]
+        //beispiel.imageInfo = MHImageInfo(bundleImageName: "homer", bundleImageType: "png")
+        beispiel.imageInfo = MHImageInfo(assetImageName: "homer")
+        
+        //UserActivity stuff
+        beispiel.userInfo = ["objectId":beispiel.uniqueIdentifier]
+        beispiel.eligibleForSearch = true
+        beispiel.eligibleForPublicIndexing = true
+        beispiel.eligibleForHandoff = false
+        beispiel.webpageURL = NSURL(string: "https://www.myhammer.de/" + beispiel.uniqueIdentifier)
+        
+        return beispiel
+    }
+    
+    func beispielObjekt2() -> BeispielTestObjekt {
+        let beispiel  = BeispielTestObjekt()
+        beispiel.domainIdentifier = "com.sowas.tolles.hier"
+        beispiel.uniqueIdentifier = "987654321"
+        beispiel.title = "Beispiel8"
+        beispiel.contentDescription = "Hier steht die ContentDescription2"
+        beispiel.keywords = ["orange", "melone", "ananas"]
+        //beispiel.imageInfo = MHImageInfo(bundleImageName: "homer", bundleImageType: "png")
+        beispiel.imageInfo = MHImageInfo(assetImageName: "carl")
+        
+        //UserActivity stuff
+        beispiel.userInfo = ["objectId":beispiel.uniqueIdentifier]
+        beispiel.eligibleForSearch = true
+        beispiel.eligibleForPublicIndexing = true
+        beispiel.eligibleForHandoff = false
+        beispiel.webpageURL = NSURL(string: "https://www.myhammer.de/" + beispiel.uniqueIdentifier)
+        
+        return beispiel
+    }
+    
+    func beispielObjekt3() -> BeispielTestObjekt {
+        let beispiel  = BeispielTestObjekt()
+        beispiel.domainIdentifier = "com.sowas.tolles.hier"
+        beispiel.uniqueIdentifier = "47110822"
+        beispiel.title = "Beispiel9"
+        beispiel.contentDescription = "Hier steht die ContentDescription3"
+        beispiel.keywords = ["erdbeere", "kiwi", "zitrone"]
+        //beispiel.imageInfo = MHImageInfo(bundleImageName: "homer", bundleImageType: "png")
+        beispiel.imageInfo = MHImageInfo(assetImageName: "carl")
+        
+        //UserActivity stuff
+        beispiel.userInfo = ["objectId":beispiel.uniqueIdentifier]
+        beispiel.eligibleForSearch = true
+        beispiel.eligibleForPublicIndexing = true
+        beispiel.eligibleForHandoff = false
+        beispiel.webpageURL = NSURL(string: "https://www.myhammer.de/" + beispiel.uniqueIdentifier)
+        
+        return beispiel
+    }
 }
 
