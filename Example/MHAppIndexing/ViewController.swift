@@ -27,18 +27,20 @@ class ViewController: UIViewController {
         let beispielZwei  = self.beispielObjekt2()
         let beispielDrei  = self.beispielObjekt3()
 		
-		//MHCoreSpotlightManager.sharedInstance.addObjectToSearchIndex(beispielEins)
+		MHCoreSpotlightManager.sharedInstance.addObjectToSearchIndex(beispielEins)
+        MHCoreSpotlightManager.sharedInstance.addObjectToSearchIndex(beispielZwei)
+        MHCoreSpotlightManager.sharedInstance.addObjectToSearchIndex(beispielDrei)
 		
-        MHUserActivityManager.sharedInstance.addObjectToSearchIndex(beispielEins)
-        MHUserActivityManager.sharedInstance.addObjectToSearchIndex(beispielZwei)
-        MHUserActivityManager.sharedInstance.addObjectToSearchIndex(beispielDrei)
+//        MHUserActivityManager.sharedInstance.addObjectToSearchIndex(beispielEins)
+//        MHUserActivityManager.sharedInstance.addObjectToSearchIndex(beispielZwei)
+//        MHUserActivityManager.sharedInstance.addObjectToSearchIndex(beispielDrei)
 	}
     
     func beispielObjekt1() -> BeispielTestObjekt {
         let beispiel  = BeispielTestObjekt()
         beispiel.domainIdentifier = "com.sowas.tolles.hier"
         beispiel.uniqueIdentifier = "123456789"
-        beispiel.title = "Beispiel7"
+        beispiel.title = "Beispiel19"
         beispiel.contentDescription = "Hier steht die ContentDescription1"
         beispiel.keywords = ["apfel", "birne", "banane"]
         //beispiel.imageInfo = MHImageInfo(bundleImageName: "homer", bundleImageType: "png")
@@ -58,7 +60,7 @@ class ViewController: UIViewController {
         let beispiel  = BeispielTestObjekt()
         beispiel.domainIdentifier = "com.sowas.tolles.hier"
         beispiel.uniqueIdentifier = "987654321"
-        beispiel.title = "Beispiel8"
+        beispiel.title = "Beispiel20"
         beispiel.contentDescription = "Hier steht die ContentDescription2"
         beispiel.keywords = ["orange", "melone", "ananas"]
         //beispiel.imageInfo = MHImageInfo(bundleImageName: "homer", bundleImageType: "png")
@@ -78,7 +80,7 @@ class ViewController: UIViewController {
         let beispiel  = BeispielTestObjekt()
         beispiel.domainIdentifier = "com.sowas.tolles.hier"
         beispiel.uniqueIdentifier = "47110822"
-        beispiel.title = "Beispiel9"
+        beispiel.title = "Beispiel21"
         beispiel.contentDescription = "Hier steht die ContentDescription3"
         beispiel.keywords = ["erdbeere", "kiwi", "zitrone"]
         //beispiel.imageInfo = MHImageInfo(bundleImageName: "homer", bundleImageType: "png")

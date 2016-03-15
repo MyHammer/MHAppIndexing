@@ -21,24 +21,28 @@ public class MHCoreSpotlightManager: NSObject {
     }
     
     public func addObjectToSearchIndex(searchObject: MHCoreSpotlightObject) {
-        let attributes: CSSearchableItemAttributeSet = CSSearchableItemAttributeSet(itemContentType: kUTTypeImage as String)
-        attributes.relatedUniqueIdentifier = searchObject.uniqueIdentifier
-        attributes.title = searchObject.title
-        attributes.contentDescription = searchObject.contentDescription
-        attributes.keywords = searchObject.keywords
+        var attributes = searchObject.attributeSet
+        if attributes == nil {
+            attributes = CSSearchableItemAttributeSet(itemContentType: kUTTypeImage as String)
+        }
+        
+        attributes!.relatedUniqueIdentifier = searchObject.uniqueIdentifier
+        attributes!.title = searchObject.title
+        attributes!.contentDescription = searchObject.contentDescription
+        attributes!.keywords = searchObject.keywords
 		
 		if let imageInfo:MHImageInfo = searchObject.imageInfo {
 			if let assetFilename = imageInfo.assetImageName {
 				if let image = UIImage(named: assetFilename) {
 					let imageData = UIImagePNGRepresentation(image)
-					attributes.thumbnailData = imageData
+					attributes!.thumbnailData = imageData
 				}
 			} else if let imageFileName = NSBundle.mainBundle().pathForResource(imageInfo.bundleImageName, ofType: imageInfo.bundleImageType) {
-				attributes.thumbnailURL = NSURL.fileURLWithPath(imageFileName)
+				attributes!.thumbnailURL = NSURL.fileURLWithPath(imageFileName)
 			}
 		}
 		
-		addSearchableItemToCoreSpotlight(searchObject.uniqueIdentifier, domainId: searchObject.domainIdentifier, attributes: attributes)
+		addSearchableItemToCoreSpotlight(searchObject.uniqueIdentifier, domainId: searchObject.domainIdentifier, attributes: attributes!)
     }
     
     func addSearchableItemToCoreSpotlight(uniqueId: String, domainId: String, attributes: CSSearchableItemAttributeSet) {

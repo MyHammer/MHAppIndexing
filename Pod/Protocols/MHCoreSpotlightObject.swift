@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreSpotlight
 
 @objc public protocol MHCoreSpotlightObject {
 
@@ -16,5 +17,8 @@ import UIKit
     var contentDescription: String { get }
     var keywords: Array<String> { get }
 	var imageInfo: MHImageInfo? { get }
-	optional var imageURL: NSURL { get }
+	
+    optional var imageURL: NSURL { get }
+    optional var attributeSet: CSSearchableItemAttributeSet { get }
+    
 }
