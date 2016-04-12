@@ -41,17 +41,35 @@ public class MHCoreSpotlightManager: NSObject {
 				attributes!.thumbnailURL = NSURL.fileURLWithPath(imageFileName)
 			}
 		}
-		
-		addSearchableItemToCoreSpotlight(searchObject.uniqueIdentifier, domainId: searchObject.domainIdentifier, attributes: attributes!)
+        
+		let expirationDate = self.expirationDateFromSearchObject(searchObject)
+		addSearchableItemToCoreSpotlight(searchObject.uniqueIdentifier, domainId: searchObject.domainIdentifier, attributes: attributes!, expirationDate: expirationDate)
     }
     
-    func addSearchableItemToCoreSpotlight(uniqueId: String, domainId: String, attributes: CSSearchableItemAttributeSet) {
+    func expirationDateFromSearchObject(searchObject: MHCoreSpotlightObject) -> NSDate {
+        var expDate: NSDate
+        
+        if let soExpDate = searchObject.expirationDate {
+            expDate = soExpDate
+        } else {
+            let dateNow: NSDate = NSDate()
+            let timeInterval: NSTimeInterval = NSTimeInterval(60 * 60 * 24 * searchItemDaysTillExpiration)
+            expDate = dateNow.dateByAddingTimeInterval(timeInterval)
+        }
+        
+        return expDate
+    }
+    
+    func addSearchableItemToCoreSpotlight(uniqueId: String, domainId: String, attributes: CSSearchableItemAttributeSet, expirationDate: NSDate) {
         let uniqueIdentifier = domainId + ":" + uniqueId
         let item: CSSearchableItem = CSSearchableItem(uniqueIdentifier: uniqueIdentifier, domainIdentifier: domainId, attributeSet: attributes)
-        //TODO: read date from MHCoreSpotlightObject
-        let expDate: NSDate = NSDate()
-        let timeInterval: NSTimeInterval = NSTimeInterval(60 * 60 * 24 * searchItemDaysTillExpiration)
-        item.expirationDate = expDate.dateByAddingTimeInterval(timeInterval)
+        //if let expDate = expirationDate {
+        item.expirationDate = expirationDate
+//        } else {
+//            let dateNow: NSDate = NSDate()
+//            let timeInterval: NSTimeInterval = NSTimeInterval(60 * 60 * 24 * searchItemDaysTillExpiration)
+//            item.expirationDate = dateNow.dateByAddingTimeInterval(timeInterval)
+//        }
 		CSSearchableIndex.defaultSearchableIndex().indexSearchableItems([item]) { (error: NSError?) -> Void in
 			if (error != nil) {
 				NSLog("Search item NOT indexed because error: " + (error?.description)!);

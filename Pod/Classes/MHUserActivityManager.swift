@@ -37,9 +37,9 @@ public class MHUserActivityManager: NSObject, NSUserActivityDelegate {
 		if let expDate = searchObject.expirationDate {
 			userActivity.expirationDate = expDate
 		} else {
-			let expDate: NSDate = NSDate()
+			let dateNow: NSDate = NSDate()
 			let timeInterval: NSTimeInterval = NSTimeInterval(60 * 60 * 24 * searchItemDaysTillExpiration)
-			userActivity.expirationDate = expDate.dateByAddingTimeInterval(timeInterval)
+			userActivity.expirationDate = dateNow.dateByAddingTimeInterval(timeInterval)
 		}
 		userActivity.delegate = self
 		self.makeActivityCurrent(userActivity)

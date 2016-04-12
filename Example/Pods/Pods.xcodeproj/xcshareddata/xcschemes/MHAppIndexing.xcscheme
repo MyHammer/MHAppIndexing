@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = 'F0F0EB1B1609CFB1AB138627'
+               BlueprintIdentifier = '85CFA1E44F8A9A0E11FFF958'
                BlueprintName = 'MHAppIndexing'
                ReferencedContainer = 'container:Pods.xcodeproj'
                BuildableName = 'MHAppIndexing.framework'>

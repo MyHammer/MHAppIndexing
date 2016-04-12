@@ -23,7 +23,7 @@ class BeispielTestObjekt: NSObject, MHUserActivityObject {
 	var eligibleForPublicIndexing:Bool
 	var eligibleForHandoff:Bool
 	var webpageURL:NSURL?
-	var expirationDate:NSDate?
+	//var expirationDate:NSDate
 	
 	override init() {
 		self.domainIdentifier = ""
@@ -35,6 +35,7 @@ class BeispielTestObjekt: NSObject, MHUserActivityObject {
 		self.eligibleForSearch = false
 		self.eligibleForPublicIndexing = false
 		self.eligibleForHandoff = false
+        //self.expirationDate = NSDate().dateByAddingTimeInterval(24 * 60 * 60 * 10)
 		super.init()
 	}
 }

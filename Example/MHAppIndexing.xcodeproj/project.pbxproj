@@ -101,11 +101,11 @@
 			children = (
 				607FACD51AFB9204008FA782 /* AppDelegate.swift */,
 				607FACD71AFB9204008FA782 /* ViewController.swift */,
+				E85A364B1C74A456003A8883 /* BeispielTestObjekt.swift */,
 				607FACD91AFB9204008FA782 /* Main.storyboard */,
 				607FACDC1AFB9204008FA782 /* Images.xcassets */,
 				607FACDE1AFB9204008FA782 /* LaunchScreen.xib */,
 				607FACD31AFB9204008FA782 /* Supporting Files */,
-				E85A364B1C74A456003A8883 /* BeispielTestObjekt.swift */,
 			);
 			name = "Example for MHAppIndexing";
 			path = MHAppIndexing;
