@@ -26,14 +26,12 @@ public class MHUserActivityManager: NSObject, NSUserActivityDelegate {
 	public func addObjectToSearchIndex(searchObject: MHUserActivityObject) {
 		let activityType = searchObject.domainIdentifier + ":" + searchObject.uniqueIdentifier
 		let userActivity = NSUserActivity(activityType: activityType)
-		userActivity.contentAttributeSet = self.contentAttributeSetFromSearchObject(searchObject)
 		userActivity.title = searchObject.title
 		userActivity.userInfo = searchObject.userInfo
 		userActivity.eligibleForSearch = searchObject.eligibleForSearch
 		userActivity.eligibleForPublicIndexing = searchObject.eligibleForPublicIndexing
 		userActivity.eligibleForHandoff = searchObject.eligibleForHandoff
 		userActivity.webpageURL = searchObject.webpageURL
-		//userActivity.expirationDate = searchObject.expirationDate == nil ? NSDate() : searchObject.expirationDate!
 		if let expDate = searchObject.expirationDate {
 			userActivity.expirationDate = expDate
 		} else {
@@ -41,11 +39,14 @@ public class MHUserActivityManager: NSObject, NSUserActivityDelegate {
 			let timeInterval: NSTimeInterval = NSTimeInterval(60 * 60 * 24 * searchItemDaysTillExpiration)
 			userActivity.expirationDate = dateNow.dateByAddingTimeInterval(timeInterval)
 		}
-		userActivity.delegate = self
-		self.makeActivityCurrent(userActivity)
+        userActivity.delegate = self
+        self.contentAttributeSetFromSearchObject(searchObject, completion: { (attributeSet:CSSearchableItemAttributeSet) in
+            userActivity.contentAttributeSet = attributeSet
+            self.makeActivityCurrent(userActivity)
+        })
 	}
 	
-	func contentAttributeSetFromSearchObject(searchObject: MHUserActivityObject) -> CSSearchableItemAttributeSet {
+    func contentAttributeSetFromSearchObject(searchObject: MHUserActivityObject, completion: ((attributeSet:CSSearchableItemAttributeSet)->Void)?) {
 		var attributes = searchObject.attributeSet
         if attributes == nil {
             attributes = CSSearchableItemAttributeSet(itemContentType: kUTTypeImage as String)
@@ -54,19 +55,33 @@ public class MHUserActivityManager: NSObject, NSUserActivityDelegate {
 		attributes!.title = searchObject.title
 		attributes!.contentDescription = searchObject.contentDescription
 		attributes!.keywords = searchObject.keywords
-		
-		if let imageInfo:MHImageInfo = searchObject.imageInfo {
-			if let assetFilename = imageInfo.assetImageName {
+        self.loadImageFromImageInfo(searchObject.imageInfo, attributes: attributes!, completion: completion)
+    }
+	
+    func loadImageFromImageInfo(imageInfo:MHImageInfo?, attributes:CSSearchableItemAttributeSet, completion:((attributeSet:CSSearchableItemAttributeSet)->Void)?) {
+		if let info:MHImageInfo = imageInfo {
+			if let assetFilename = info.assetImageName {
 				if let image = UIImage(named: assetFilename) {
 					let imageData = UIImagePNGRepresentation(image)
-					attributes!.thumbnailData = imageData
+					attributes.thumbnailData = imageData
 				}
-			} else if let imageFileName = NSBundle.mainBundle().pathForResource(imageInfo.bundleImageName, ofType: imageInfo.bundleImageType) {
-				attributes!.thumbnailURL = NSURL.fileURLWithPath(imageFileName)
-			}
-		}
-		
-		return attributes!
+                completion?(attributeSet: attributes)
+			} else if let imageFileName = NSBundle.mainBundle().pathForResource(info.bundleImageName, ofType: info.bundleImageType) {
+				attributes.thumbnailURL = NSURL.fileURLWithPath(imageFileName)
+                completion?(attributeSet: attributes)
+            } else if let imageURL = info.imageURL {
+                UIImage.loadImageAsyncFromURL(imageURL, completion: { (result:UIImage?) in
+                    if let image = result {
+                        attributes.thumbnailData = UIImagePNGRepresentation(image)
+                    }
+                    completion?(attributeSet: attributes)
+                })
+            } else {
+                completion?(attributeSet: attributes)
+            }
+        } else {
+            completion?(attributeSet: attributes)
+        }
 	}
 	
 	func makeActivityCurrent(activity: NSUserActivity) {

@@ -18,7 +18,6 @@ import CoreSpotlight
     var keywords: Array<String> { get }
 	var imageInfo: MHImageInfo? { get }
 
-    optional var imageURL: NSURL { get }
     optional var attributeSet: CSSearchableItemAttributeSet { get }
     optional var expirationDate:NSDate { get } // default is 30 days when not set
 }

@@ -12,6 +12,7 @@ public class MHImageInfo: NSObject {
 	var bundleImageName : String?
 	var bundleImageType : String?
 	var assetImageName : String?
+    var imageURL: NSURL?
 	
 	public init(bundleImageName:String, bundleImageType:String) {
 		self.bundleImageName = bundleImageName
@@ -23,6 +24,11 @@ public class MHImageInfo: NSObject {
 		self.assetImageName = assetImageName
 		super.init()
 	}
+    
+    public init(imageURL:NSURL) {
+        self.imageURL = imageURL
+        super.init()
+    }
 	
 	//TODO: Async image loading
 }

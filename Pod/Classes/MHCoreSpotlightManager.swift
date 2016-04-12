@@ -31,19 +31,10 @@ public class MHCoreSpotlightManager: NSObject {
         attributes!.contentDescription = searchObject.contentDescription
         attributes!.keywords = searchObject.keywords
 		
-		if let imageInfo:MHImageInfo = searchObject.imageInfo {
-			if let assetFilename = imageInfo.assetImageName {
-				if let image = UIImage(named: assetFilename) {
-					let imageData = UIImagePNGRepresentation(image)
-					attributes!.thumbnailData = imageData
-				}
-			} else if let imageFileName = NSBundle.mainBundle().pathForResource(imageInfo.bundleImageName, ofType: imageInfo.bundleImageType) {
-				attributes!.thumbnailURL = NSURL.fileURLWithPath(imageFileName)
-			}
-		}
-        
-		let expirationDate = self.expirationDateFromSearchObject(searchObject)
-		addSearchableItemToCoreSpotlight(searchObject.uniqueIdentifier, domainId: searchObject.domainIdentifier, attributes: attributes!, expirationDate: expirationDate)
+		self.loadImageFromImageInfo(searchObject.imageInfo, attributes:attributes!) { (Void) in
+            let expirationDate = self.expirationDateFromSearchObject(searchObject)
+            self.addSearchableItemToCoreSpotlight(searchObject.uniqueIdentifier, domainId: searchObject.domainIdentifier, attributes: attributes!, expirationDate: expirationDate)
+        }
     }
     
     func expirationDateFromSearchObject(searchObject: MHCoreSpotlightObject) -> NSDate {
@@ -63,13 +54,8 @@ public class MHCoreSpotlightManager: NSObject {
     func addSearchableItemToCoreSpotlight(uniqueId: String, domainId: String, attributes: CSSearchableItemAttributeSet, expirationDate: NSDate) {
         let uniqueIdentifier = domainId + ":" + uniqueId
         let item: CSSearchableItem = CSSearchableItem(uniqueIdentifier: uniqueIdentifier, domainIdentifier: domainId, attributeSet: attributes)
-        //if let expDate = expirationDate {
         item.expirationDate = expirationDate
-//        } else {
-//            let dateNow: NSDate = NSDate()
-//            let timeInterval: NSTimeInterval = NSTimeInterval(60 * 60 * 24 * searchItemDaysTillExpiration)
-//            item.expirationDate = dateNow.dateByAddingTimeInterval(timeInterval)
-//        }
+
 		CSSearchableIndex.defaultSearchableIndex().indexSearchableItems([item]) { (error: NSError?) -> Void in
 			if (error != nil) {
 				NSLog("Search item NOT indexed because error: " + (error?.description)!);
@@ -82,4 +68,46 @@ public class MHCoreSpotlightManager: NSObject {
 			}
 		}
     }
+    
+    func loadImageFromImageInfo(imageInfo:MHImageInfo?, attributes:CSSearchableItemAttributeSet, completion: ((Void)->Void)?) {
+        if let info:MHImageInfo = imageInfo {
+            if let assetFilename = info.assetImageName {
+                if let image = UIImage(named: assetFilename) {
+                    let imageData = UIImagePNGRepresentation(image)
+                    attributes.thumbnailData = imageData
+                }
+                completion?()
+            } else if let imageFileName = NSBundle.mainBundle().pathForResource(info.bundleImageName, ofType: info.bundleImageType) {
+                attributes.thumbnailURL = NSURL.fileURLWithPath(imageFileName)
+                completion?()
+            } else if let imageURL = info.imageURL {
+                UIImage.loadImageAsyncFromURL(imageURL, completion: { (result:UIImage?) in
+                    if let image = result {
+                        attributes.thumbnailData = UIImagePNGRepresentation(image)
+                    }
+                    completion?()
+                })
+            } else {
+                completion?()
+            }
+        } else {
+            completion?()
+        }
+    }
+    
+//    func loadImageAsyncFromURL(imageURL: NSURL, completion: ((resultImage:UIImage?)->Void)?) {
+//        print("Begin loading image async for url: " + String(imageURL))
+//        let priority = DISPATCH_QUEUE_PRIORITY_DEFAULT
+//        dispatch_async(dispatch_get_global_queue(priority, 0), {
+//            var resultImage:UIImage?
+//            let imageData:NSData? = NSData(contentsOfURL: imageURL)
+//            if let data:NSData = imageData {
+//                resultImage = UIImage(data: data)
+//            }
+//            dispatch_async(dispatch_get_main_queue(), {
+//                print("Finished loading image async")
+//                completion?(resultImage: resultImage)
+//            })
+//        })
+//    }
 }

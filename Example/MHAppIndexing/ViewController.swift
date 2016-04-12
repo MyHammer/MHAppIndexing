@@ -27,11 +27,11 @@ class ViewController: UIViewController {
         let beispielZwei  = self.beispielObjekt2()
         let beispielDrei  = self.beispielObjekt3()
 		
-		MHCoreSpotlightManager.sharedInstance.addObjectToSearchIndex(beispielEins)
+	//	MHCoreSpotlightManager.sharedInstance.addObjectToSearchIndex(beispielEins)
         MHCoreSpotlightManager.sharedInstance.addObjectToSearchIndex(beispielZwei)
         MHCoreSpotlightManager.sharedInstance.addObjectToSearchIndex(beispielDrei)
 		
-//        MHUserActivityManager.sharedInstance.addObjectToSearchIndex(beispielEins)
+        MHUserActivityManager.sharedInstance.addObjectToSearchIndex(beispielEins)
 //        MHUserActivityManager.sharedInstance.addObjectToSearchIndex(beispielZwei)
 //        MHUserActivityManager.sharedInstance.addObjectToSearchIndex(beispielDrei)
 	}
@@ -39,12 +39,13 @@ class ViewController: UIViewController {
     func beispielObjekt1() -> BeispielTestObjekt {
         let beispiel  = BeispielTestObjekt()
         beispiel.domainIdentifier = "com.sowas.tolles.hier"
-        beispiel.uniqueIdentifier = "123456789"
-        beispiel.title = "Beispiel19"
+        beispiel.uniqueIdentifier = "1234567891"
+        beispiel.title = "Beispiel26"
         beispiel.contentDescription = "Hier steht die ContentDescription1"
         beispiel.keywords = ["apfel", "birne", "banane"]
         //beispiel.imageInfo = MHImageInfo(bundleImageName: "homer", bundleImageType: "png")
-        beispiel.imageInfo = MHImageInfo(assetImageName: "homer")
+        //beispiel.imageInfo = MHImageInfo(assetImageName: "homer")
+        beispiel.imageInfo = MHImageInfo(imageURL: NSURL(string: "https://e.myhcdn.net/v3/thumbs/profileSmallV2/cc/c/1691707.gif?")!)
         
         //UserActivity stuff
         beispiel.userInfo = ["objectId":beispiel.uniqueIdentifier]
