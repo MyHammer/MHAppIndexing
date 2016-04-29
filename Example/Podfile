@@ -1,3 +1,4 @@
+platform :ios, '9.0'
 source 'https://github.com/CocoaPods/Specs.git'
 use_frameworks!
 
@@ -8,6 +9,6 @@ end
 target 'MHAppIndexing_Tests', :exclusive => true do
   pod 'MHAppIndexing', :path => '../'
 
-  pod 'Quick', '~> 0.8.0'
-  pod 'Nimble', '3.2.0'
+  pod 'Quick', '~> 0.9.2'
+  pod 'Nimble', '4.0.1'
 end
