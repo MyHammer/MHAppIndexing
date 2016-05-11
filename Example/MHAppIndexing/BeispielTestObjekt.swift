@@ -11,31 +11,29 @@ import MHAppIndexing
 
 class BeispielTestObjekt: NSObject, MHUserActivityObject {
 	
-	var domainIdentifier: String
-	var uniqueIdentifier: String
-	var title: String
-	var contentDescription: String
-	var keywords: Array<String>
-	var imageBundlePath: String
-	var imageInfo: MHImageInfo?
-	var userInfo:[String: NSSecureCoding]?
-	var eligibleForSearch:Bool
-	var eligibleForPublicIndexing:Bool
-	var eligibleForHandoff:Bool
-	var webpageURL:NSURL?
+	var mhDomainIdentifier: String
+	var mhUniqueIdentifier: String
+	var mhTitle: String
+	var mhContentDescription: String
+	var mhKeywords: Array<String>
+	var mhImageInfo: MHImageInfo?
+	var mhUserInfo:[String: NSSecureCoding]?
+	var mhEligibleForSearch:Bool
+	var mhEligibleForPublicIndexing:Bool
+	var mhEligibleForHandoff:Bool
+	var mhWebpageURL:NSURL?
 	//var expirationDate:NSDate
 	
 	override init() {
-		self.domainIdentifier = ""
-		self.uniqueIdentifier = ""
-		self.title = ""
-		self.contentDescription = ""
-		self.keywords = []
-		self.imageBundlePath = ""
-		self.eligibleForSearch = false
-		self.eligibleForPublicIndexing = false
-		self.eligibleForHandoff = false
-        //self.expirationDate = NSDate().dateByAddingTimeInterval(24 * 60 * 60 * 10)
+		self.mhDomainIdentifier = ""
+		self.mhUniqueIdentifier = ""
+		self.mhTitle = ""
+		self.mhContentDescription = ""
+		self.mhKeywords = []
+		self.mhEligibleForSearch = false
+		self.mhEligibleForPublicIndexing = false
+		self.mhEligibleForHandoff = false
+        //self.mhExpirationDate = NSDate().dateByAddingTimeInterval(24 * 60 * 60 * 10)
 		super.init()
 	}
 }

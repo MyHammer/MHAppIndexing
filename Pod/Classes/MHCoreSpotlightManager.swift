@@ -22,26 +22,26 @@ public class MHCoreSpotlightManager: NSObject {
     }
     
     public func addObjectToSearchIndex(searchObject: MHCoreSpotlightObject) {
-        var attributes = searchObject.attributeSet
+        var attributes = searchObject.mhAttributeSet
         if attributes == nil {
             attributes = CSSearchableItemAttributeSet(itemContentType: kUTTypeImage as String)
         }
         
-        attributes!.relatedUniqueIdentifier = searchObject.uniqueIdentifier
-        attributes!.title = searchObject.title
-        attributes!.contentDescription = searchObject.contentDescription
-        attributes!.keywords = searchObject.keywords
+        attributes!.relatedUniqueIdentifier = searchObject.mhUniqueIdentifier
+        attributes!.title = searchObject.mhTitle
+        attributes!.contentDescription = searchObject.mhContentDescription
+        attributes!.keywords = searchObject.mhKeywords
 		
-		self.loadImageFromImageInfo(searchObject.imageInfo, attributes:attributes!) { (Void) in
+		self.loadImageFromImageInfo(searchObject.mhImageInfo, attributes:attributes!) { (Void) in
             let expirationDate = self.expirationDateFromSearchObject(searchObject)
-            self.addSearchableItemToCoreSpotlight(searchObject.uniqueIdentifier, domainId: searchObject.domainIdentifier, attributes: attributes!, expirationDate: expirationDate)
+            self.addSearchableItemToCoreSpotlight(searchObject.mhUniqueIdentifier, domainId: searchObject.mhDomainIdentifier, attributes: attributes!, expirationDate: expirationDate)
         }
     }
     
     func expirationDateFromSearchObject(searchObject: MHCoreSpotlightObject) -> NSDate {
         var expDate: NSDate
         
-        if let soExpDate = searchObject.expirationDate {
+        if let soExpDate = searchObject.mhExpirationDate {
             expDate = soExpDate
         } else {
             let dateNow: NSDate = NSDate()
