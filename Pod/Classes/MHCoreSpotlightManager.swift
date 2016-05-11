@@ -12,6 +12,7 @@ import MobileCoreServices
 
 let searchItemDaysTillExpiration = 30
 
+@available(iOS 9.0, *)
 public class MHCoreSpotlightManager: NSObject {
     
     public static let sharedInstance = MHCoreSpotlightManager()

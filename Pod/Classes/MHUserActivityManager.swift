@@ -12,6 +12,7 @@ import MobileCoreServices
 
 let userActivityActivationDelay = 2.0
 
+@available(iOS 9.0, *)
 public class MHUserActivityManager: NSObject, NSUserActivityDelegate {
 	
 	public static let sharedInstance = MHUserActivityManager()

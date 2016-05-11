@@ -9,6 +9,7 @@
 import UIKit
 import CoreSpotlight
 
+@available(iOS 9.0, *)
 @objc public protocol MHCoreSpotlightObject {
 
     var domainIdentifier: String { get }
