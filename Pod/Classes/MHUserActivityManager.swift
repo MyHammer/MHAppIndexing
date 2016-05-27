@@ -26,7 +26,7 @@ public class MHUserActivityManager: NSObject, NSUserActivityDelegate {
 	
 	public func addObjectToSearchIndex(searchObject: MHUserActivityObject) {
 		let activityType = searchObject.mhDomainIdentifier + ":" + searchObject.mhUniqueIdentifier
-		let userActivity = NSUserActivity(activityType: activityType)
+		let userActivity = self.createUserActivity(activityType)
 		userActivity.title = searchObject.mhTitle
 		userActivity.userInfo = searchObject.mhUserInfo
 		userActivity.eligibleForSearch = searchObject.mhEligibleForSearch
@@ -45,6 +45,10 @@ public class MHUserActivityManager: NSObject, NSUserActivityDelegate {
             userActivity.contentAttributeSet = attributeSet
             self.makeActivityCurrent(userActivity)
         })
+	}
+	
+	func createUserActivity(activityType:String) -> NSUserActivity {
+		return NSUserActivity(activityType: activityType)
 	}
 	
     func contentAttributeSetFromSearchObject(searchObject: MHUserActivityObject, completion: ((attributeSet:CSSearchableItemAttributeSet)->Void)?) {
