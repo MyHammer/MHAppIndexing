@@ -20,6 +20,7 @@
 		E85A364C1C74A456003A8883 /* BeispielTestObjekt.swift in Sources */ = {isa = PBXBuildFile; fileRef = E85A364B1C74A456003A8883 /* BeispielTestObjekt.swift */; };
 		E85A36511C74B6D6003A8883 /* homer.png in Resources */ = {isa = PBXBuildFile; fileRef = E85A36501C74B6D6003A8883 /* homer.png */; };
 		E85A36531C74C0C8003A8883 /* carl.png in Resources */ = {isa = PBXBuildFile; fileRef = E85A36521C74C0C8003A8883 /* carl.png */; };
+		EE8199CE1CF88E8300ABF331 /* TestObjekt.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE8199CD1CF88E8300ABF331 /* TestObjekt.swift */; };
 		EEAFDF021C6260FC003EA4A5 /* Test.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEAFDF011C6260FC003EA4A5 /* Test.swift */; };
 /* End PBXBuildFile section */
 
@@ -57,6 +58,7 @@
 		E85A36501C74B6D6003A8883 /* homer.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = homer.png; sourceTree = "<group>"; };
 		E85A36521C74C0C8003A8883 /* carl.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = carl.png; sourceTree = "<group>"; };
 		EE1ED890A489E47EA374CA2A /* Pods-MHAppIndexing_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MHAppIndexing_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-MHAppIndexing_Example/Pods-MHAppIndexing_Example.release.xcconfig"; sourceTree = "<group>"; };
+		EE8199CD1CF88E8300ABF331 /* TestObjekt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestObjekt.swift; sourceTree = "<group>"; };
 		EEAFDF011C6260FC003EA4A5 /* Test.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Test.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -129,9 +131,10 @@
 		607FACE81AFB9204008FA782 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
-				EEAFDF011C6260FC003EA4A5 /* Test.swift */,
 				E82904E61CF87F1400F5B1A1 /* MHCoreSpotlightManagerTest.swift */,
 				E82904E81CF87F3100F5B1A1 /* MHUserActivityManagerTest.swift */,
+				EEAFDF011C6260FC003EA4A5 /* Test.swift */,
+				EE8199CD1CF88E8300ABF331 /* TestObjekt.swift */,
 				607FACE91AFB9204008FA782 /* Supporting Files */,
 			);
 			path = Tests;
@@ -391,6 +394,7 @@
 				E82904E91CF87F3100F5B1A1 /* MHUserActivityManagerTest.swift in Sources */,
 				E82904E71CF87F1400F5B1A1 /* MHCoreSpotlightManagerTest.swift in Sources */,
 				EEAFDF021C6260FC003EA4A5 /* Test.swift in Sources */,
+				EE8199CE1CF88E8300ABF331 /* TestObjekt.swift in Sources */,
 				E82904EA1CF8833D00F5B1A1 /* BeispielTestObjekt.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
