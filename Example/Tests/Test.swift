@@ -28,25 +28,4 @@ class Test: XCTestCase {
     func testExample() {
         expect(1 + 1).to(equal(2))
     }
-	
-	func testAddingObjectToActivitiesOnMakeActivityCurrent() {
-		self.userActivity = NSUserActivity(activityType:"TestActivity")
-		self.activityManager.makeActivityCurrent(userActivity)
-		expect(self.activityManager.activities.count).to(equal(1))
-	}
-	
-	func testAddObjectOnMakeActivityCurrent() {
-		class TestArray:NSMutableArray {
-			var addObjectWasCalled = false
-			
-			override func addObject(anObject: AnyObject) {
-				addObjectWasCalled = true
-			}
-		}
-		let testActivities:TestArray = TestArray()
-		self.userActivity = NSUserActivity(activityType:"TestActivity")
-		self.activityManager.activities = testActivities
-		self.activityManager.makeActivityCurrent(userActivity)
-		expect(testActivities.addObjectWasCalled).to(equal(true))
-	}
 }
