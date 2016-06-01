@@ -41,7 +41,7 @@ class ViewController: UIViewController {
 	}
 	
 	/*
-		// MARK: - example creation methods
+		// MARK: example creation methods
 	*/
 	
     

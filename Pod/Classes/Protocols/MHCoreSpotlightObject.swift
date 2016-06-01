@@ -9,6 +9,7 @@
 import UIKit
 import CoreSpotlight
 
+/// Protocol for objects required by **MHCoreSpotlightManager**. The properies correspond to the properties of **CSSearchableItem** and **CSSearchableItemAttributeSet**.
 @available(iOS 9.0, *)
 @objc public protocol MHCoreSpotlightObject {
 

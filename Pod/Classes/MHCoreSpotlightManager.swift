@@ -12,15 +12,21 @@ import MobileCoreServices
 
 let searchItemDaysTillExpiration = 30
 
+
+/// Manager for indexing objects that confirm to protocol **MHCoreSpotlightObject**
 @available(iOS 9.0, *)
 public class MHCoreSpotlightManager: NSObject {
     
+	/// Factory method returning a shared instance of **MHCoreSpotlightManager**
     public static let sharedInstance = MHCoreSpotlightManager()
     
-    override init() {
-        super.init()
-    }
-    
+	/**
+	
+	Adding an object to search index
+	
+	- parameter searchObject: Object that confirms to protocol MHCoreSpotlightObject
+	
+	*/
     public func addObjectToSearchIndex(searchObject: MHCoreSpotlightObject) {
         var attributes = searchObject.mhAttributeSet
         if attributes == nil {
@@ -37,7 +43,7 @@ public class MHCoreSpotlightManager: NSObject {
             self.addSearchableItemToCoreSpotlight(searchObject.mhUniqueIdentifier, domainId: searchObject.mhDomainIdentifier, attributes: attributes!, expirationDate: expirationDate)
         }
     }
-    
+	
     func expirationDateFromSearchObject(searchObject: MHCoreSpotlightObject) -> NSDate {
         var expDate: NSDate
         

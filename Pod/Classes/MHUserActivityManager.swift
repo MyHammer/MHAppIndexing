@@ -12,10 +12,13 @@ import MobileCoreServices
 
 let userActivityActivationDelay = 2.0
 
+/// Manager for indexing objects that confirm to protocol **MHUserActivityObject**
 @available(iOS 9.0, *)
 public class MHUserActivityManager: NSObject, NSUserActivityDelegate {
 	
+	/// Factory method returning a shared instance of MHUserActivityManager
 	public static let sharedInstance = MHUserActivityManager()
+	
 	var activities: NSMutableArray
     var didStartMakingActivitiesCurrent = false
 	
@@ -24,6 +27,13 @@ public class MHUserActivityManager: NSObject, NSUserActivityDelegate {
 		super.init()
 	}
 	
+	/**
+	
+	Adding an object to search index
+	
+	- parameter searchObject: Object that confirms to protocol MHUserActivityObject
+	
+	*/
 	public func addObjectToSearchIndex(searchObject: MHUserActivityObject) {
 		let activityType = searchObject.mhDomainIdentifier + ":" + searchObject.mhUniqueIdentifier
 		let userActivity = self.createUserActivity(activityType)
@@ -111,6 +121,13 @@ public class MHUserActivityManager: NSObject, NSUserActivityDelegate {
 	
 	// MARK: - NSUserActivityDelegate methods
 	
+	/**
+	
+	Make next activity to current activity to add it to search index
+	
+	- parameter userActivity: Already indexed activity
+	
+	*/
 	public func userActivityWillSave(userActivity: NSUserActivity) {
         if let activityTitle = userActivity.title {
             NSLog("UserActivity will save with title: " + activityTitle)
