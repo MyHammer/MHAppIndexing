@@ -16,8 +16,8 @@
 		CD3985B740E715E606A9C2BC /* Pods_MHAppIndexing_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E74D3D9AF1D4661BF8A25384 /* Pods_MHAppIndexing_Example.framework */; };
 		E82904E71CF87F1400F5B1A1 /* MHCoreSpotlightManagerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E82904E61CF87F1400F5B1A1 /* MHCoreSpotlightManagerTest.swift */; };
 		E82904E91CF87F3100F5B1A1 /* MHUserActivityManagerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E82904E81CF87F3100F5B1A1 /* MHUserActivityManagerTest.swift */; };
-		E82904EA1CF8833D00F5B1A1 /* BeispielTestObjekt.swift in Sources */ = {isa = PBXBuildFile; fileRef = E85A364B1C74A456003A8883 /* BeispielTestObjekt.swift */; };
-		E85A364C1C74A456003A8883 /* BeispielTestObjekt.swift in Sources */ = {isa = PBXBuildFile; fileRef = E85A364B1C74A456003A8883 /* BeispielTestObjekt.swift */; };
+		E82904EA1CF8833D00F5B1A1 /* ExampleObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = E85A364B1C74A456003A8883 /* ExampleObject.swift */; };
+		E85A364C1C74A456003A8883 /* ExampleObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = E85A364B1C74A456003A8883 /* ExampleObject.swift */; };
 		E85A36511C74B6D6003A8883 /* homer.png in Resources */ = {isa = PBXBuildFile; fileRef = E85A36501C74B6D6003A8883 /* homer.png */; };
 		E85A36531C74C0C8003A8883 /* carl.png in Resources */ = {isa = PBXBuildFile; fileRef = E85A36521C74C0C8003A8883 /* carl.png */; };
 		EE8199CE1CF88E8300ABF331 /* TestObjekt.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE8199CD1CF88E8300ABF331 /* TestObjekt.swift */; };
@@ -54,7 +54,7 @@
 		E74D3D9AF1D4661BF8A25384 /* Pods_MHAppIndexing_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MHAppIndexing_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E82904E61CF87F1400F5B1A1 /* MHCoreSpotlightManagerTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MHCoreSpotlightManagerTest.swift; sourceTree = "<group>"; };
 		E82904E81CF87F3100F5B1A1 /* MHUserActivityManagerTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MHUserActivityManagerTest.swift; sourceTree = "<group>"; };
-		E85A364B1C74A456003A8883 /* BeispielTestObjekt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BeispielTestObjekt.swift; sourceTree = "<group>"; };
+		E85A364B1C74A456003A8883 /* ExampleObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExampleObject.swift; sourceTree = "<group>"; };
 		E85A36501C74B6D6003A8883 /* homer.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = homer.png; sourceTree = "<group>"; };
 		E85A36521C74C0C8003A8883 /* carl.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = carl.png; sourceTree = "<group>"; };
 		EE1ED890A489E47EA374CA2A /* Pods-MHAppIndexing_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MHAppIndexing_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-MHAppIndexing_Example/Pods-MHAppIndexing_Example.release.xcconfig"; sourceTree = "<group>"; };
@@ -108,7 +108,7 @@
 			children = (
 				607FACD51AFB9204008FA782 /* AppDelegate.swift */,
 				607FACD71AFB9204008FA782 /* ViewController.swift */,
-				E85A364B1C74A456003A8883 /* BeispielTestObjekt.swift */,
+				E85A364B1C74A456003A8883 /* ExampleObject.swift */,
 				607FACD91AFB9204008FA782 /* Main.storyboard */,
 				607FACDC1AFB9204008FA782 /* Images.xcassets */,
 				607FACDE1AFB9204008FA782 /* LaunchScreen.xib */,
@@ -382,7 +382,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				607FACD81AFB9204008FA782 /* ViewController.swift in Sources */,
-				E85A364C1C74A456003A8883 /* BeispielTestObjekt.swift in Sources */,
+				E85A364C1C74A456003A8883 /* ExampleObject.swift in Sources */,
 				607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -395,7 +395,7 @@
 				E82904E71CF87F1400F5B1A1 /* MHCoreSpotlightManagerTest.swift in Sources */,
 				EEAFDF021C6260FC003EA4A5 /* Test.swift in Sources */,
 				EE8199CE1CF88E8300ABF331 /* TestObjekt.swift in Sources */,
-				E82904EA1CF8833D00F5B1A1 /* BeispielTestObjekt.swift in Sources */,
+				E82904EA1CF8833D00F5B1A1 /* ExampleObject.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

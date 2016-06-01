@@ -1,5 +1,5 @@
 //
-//  BeispielTestObjekt.swift
+//  ExampleObject.swift
 //  MHAppIndexing
 //
 //  Created by Andre Hess on 17.02.16.
@@ -9,7 +9,7 @@
 import UIKit
 import MHAppIndexing
 
-class BeispielTestObjekt: NSObject, MHUserActivityObject {
+class ExampleObject: NSObject, MHUserActivityObject {
 	
 	var mhDomainIdentifier: String
 	var mhUniqueIdentifier: String

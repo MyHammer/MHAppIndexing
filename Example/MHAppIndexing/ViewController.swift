@@ -13,88 +13,93 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
 
 	
-	@IBAction func legLosButtonTouched(sender: AnyObject) {
-		let beispielEins  = self.beispielObjekt1()
-        let beispielZwei  = self.beispielObjekt2()
-        let beispielDrei  = self.beispielObjekt3()
+	@IBAction func indexCoreSpotlightObjects(sender: AnyObject) {
+		let exampleOne  = self.exampleObject1()
+        let exampleTwo  = self.exampleObject2()
+        let exampleThree  = self.exampleObject3()
 		
-	//	MHCoreSpotlightManager.sharedInstance.addObjectToSearchIndex(beispielEins)
-        MHCoreSpotlightManager.sharedInstance.addObjectToSearchIndex(beispielZwei)
-        MHCoreSpotlightManager.sharedInstance.addObjectToSearchIndex(beispielDrei)
-		
-        MHUserActivityManager.sharedInstance.addObjectToSearchIndex(beispielEins)
-//        MHUserActivityManager.sharedInstance.addObjectToSearchIndex(beispielZwei)
-//        MHUserActivityManager.sharedInstance.addObjectToSearchIndex(beispielDrei)
+		MHCoreSpotlightManager.sharedInstance.addObjectToSearchIndex(exampleOne)
+        MHCoreSpotlightManager.sharedInstance.addObjectToSearchIndex(exampleTwo)
+        MHCoreSpotlightManager.sharedInstance.addObjectToSearchIndex(exampleThree)
 	}
+	
+	@IBAction func indexUserActivityObjects(sender: AnyObject) {
+		let exampleOne  = self.exampleObject1()
+		let exampleTwo  = self.exampleObject2()
+		let exampleThree  = self.exampleObject3()
+		
+		MHUserActivityManager.sharedInstance.addObjectToSearchIndex(exampleOne)
+		MHUserActivityManager.sharedInstance.addObjectToSearchIndex(exampleTwo)
+		MHUserActivityManager.sharedInstance.addObjectToSearchIndex(exampleThree)
+	}
+	
+	/*
+		// MARK: - example creation methods
+	*/
+	
     
-    func beispielObjekt1() -> BeispielTestObjekt {
-        let beispiel  = BeispielTestObjekt()
-        beispiel.mhDomainIdentifier = "com.sowas.tolles.hier"
-        beispiel.mhUniqueIdentifier = "1234567891"
-        beispiel.mhTitle = "Beispiel26"
-        beispiel.mhContentDescription = "Hier steht die ContentDescription1"
-        beispiel.mhKeywords = ["apfel", "birne", "banane"]
-        //beispiel.mhImageInfo = MHImageInfo(bundleImageName: "homer", bundleImageType: "png")
-        //beispiel.mhImageInfo = MHImageInfo(assetImageName: "homer")
-        beispiel.mhImageInfo = MHImageInfo(imageURL: NSURL(string: "https://e.myhcdn.net/v3/thumbs/profileSmallV2/cc/c/1691707.gif?")!)
+    func exampleObject1() -> ExampleObject {
+        let example  = ExampleObject()
+        example.mhDomainIdentifier = "com.some.what.here"
+        example.mhUniqueIdentifier = "1234567891"
+        example.mhTitle = "Lisa"
+        example.mhContentDescription = "This is a content description for Lisa"
+        example.mhKeywords = ["apple", "cherry", "banana"]
+        example.mhImageInfo = MHImageInfo(imageURL: NSURL(string: "https://upload.wikimedia.org/wikipedia/en/e/ec/Lisa_Simpson.png")!)
         
         //UserActivity stuff
-        beispiel.mhUserInfo = ["objectId":beispiel.mhUniqueIdentifier]
-        beispiel.mhEligibleForSearch = true
-        beispiel.mhEligibleForPublicIndexing = true
-        beispiel.mhEligibleForHandoff = false
-        beispiel.mhWebpageURL = NSURL(string: "https://www.myhammer.de/" + beispiel.mhUniqueIdentifier)
+        example.mhUserInfo = ["objectId":example.mhUniqueIdentifier]
+        example.mhEligibleForSearch = true
+        example.mhEligibleForPublicIndexing = true
+        example.mhEligibleForHandoff = false
+        example.mhWebpageURL = NSURL(string: "https://en.wikipedia.org/wiki/Lisa_Simpson")
         
-        return beispiel
+        return example
     }
     
-    func beispielObjekt2() -> BeispielTestObjekt {
-        let beispiel  = BeispielTestObjekt()
-        beispiel.mhDomainIdentifier = "com.sowas.tolles.hier"
-        beispiel.mhUniqueIdentifier = "987654321"
-        beispiel.mhTitle = "Beispiel20"
-        beispiel.mhContentDescription = "Hier steht die ContentDescription2"
-        beispiel.mhKeywords = ["orange", "melone", "ananas"]
-        //beispiel.mhImageInfo = MHImageInfo(bundleImageName: "homer", bundleImageType: "png")
-        beispiel.mhImageInfo = MHImageInfo(assetImageName: "carl")
+    func exampleObject2() -> ExampleObject {
+        let example  = ExampleObject()
+        example.mhDomainIdentifier = "com.some.what.here"
+        example.mhUniqueIdentifier = "987654321"
+        example.mhTitle = "Homer"
+        example.mhContentDescription = "Here is a content description for Homer"
+        example.mhKeywords = ["orange", "melon", "pineapple"]
+        example.mhImageInfo = MHImageInfo(bundleImageName: "homer", bundleImageType: "png")
         
         //UserActivity stuff
-        beispiel.mhUserInfo = ["objectId":beispiel.mhUniqueIdentifier]
-        beispiel.mhEligibleForSearch = true
-        beispiel.mhEligibleForPublicIndexing = true
-        beispiel.mhEligibleForHandoff = false
-        beispiel.mhWebpageURL = NSURL(string: "https://www.myhammer.de/" + beispiel.mhUniqueIdentifier)
+        example.mhUserInfo = ["objectId":example.mhUniqueIdentifier]
+        example.mhEligibleForSearch = true
+        example.mhEligibleForPublicIndexing = true
+        example.mhEligibleForHandoff = false
+        example.mhWebpageURL = NSURL(string: "https://en.wikipedia.org/wiki/Homer_Simpson")
         
-        return beispiel
+        return example
     }
     
-    func beispielObjekt3() -> BeispielTestObjekt {
-        let beispiel  = BeispielTestObjekt()
-        beispiel.mhDomainIdentifier = "com.sowas.tolles.hier"
-        beispiel.mhUniqueIdentifier = "47110822"
-        beispiel.mhTitle = "Beispiel21"
-        beispiel.mhContentDescription = "Hier steht die ContentDescription3"
-        beispiel.mhKeywords = ["erdbeere", "kiwi", "zitrone"]
-        //beispiel.mhImageInfo = MHImageInfo(bundleImageName: "homer", bundleImageType: "png")
-        beispiel.mhImageInfo = MHImageInfo(assetImageName: "carl")
+    func exampleObject3() -> ExampleObject {
+        let example  = ExampleObject()
+        example.mhDomainIdentifier = "com.some.what.here"
+        example.mhUniqueIdentifier = "47110822"
+        example.mhTitle = "Carl"
+        example.mhContentDescription = "Content description here for Carl"
+        example.mhKeywords = ["strawberry", "kiwi", "lemon"]
+        example.mhImageInfo = MHImageInfo(assetImageName: "carl")
         
         //UserActivity stuff
-        beispiel.mhUserInfo = ["objectId":beispiel.mhUniqueIdentifier]
-        beispiel.mhEligibleForSearch = true
-        beispiel.mhEligibleForPublicIndexing = true
-        beispiel.mhEligibleForHandoff = false
-        beispiel.mhWebpageURL = NSURL(string: "https://www.myhammer.de/" + beispiel.mhUniqueIdentifier)
+        example.mhUserInfo = ["objectId":example.mhUniqueIdentifier]
+        example.mhEligibleForSearch = true
+        example.mhEligibleForPublicIndexing = true
+        example.mhEligibleForHandoff = false
+        example.mhWebpageURL = NSURL(string: "https://en.wikipedia.org/wiki/Lenny_and_Carl#Carl_Carlson")
         
-        return beispiel
+        return example
     }
 }
 

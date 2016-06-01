@@ -33,7 +33,7 @@ class MHUserActivityManagerTest: XCTestCase {
 				contentAttributeSetFromSearchObjectWasCalled = true
 			}
 		}
-		let testObject:BeispielTestObjekt = BeispielTestObjekt()
+		let testObject:ExampleObject = ExampleObject()
 		let testActivityManager = TestUserActivityManager()
 		testActivityManager.addObjectToSearchIndex(testObject)
 		expect(testActivityManager.contentAttributeSetFromSearchObjectWasCalled).to(equal(true))
@@ -48,7 +48,7 @@ class MHUserActivityManagerTest: XCTestCase {
 				return testUserActivity
 			}
 		}
-		let testObject:BeispielTestObjekt = BeispielTestObjekt() 
+		let testObject:ExampleObject = ExampleObject() 
 		testObject.mhDomainIdentifier = "com.sowas.tolles.hier"
 		testObject.mhUniqueIdentifier = "1234567891"
 		testObject.mhTitle = "Beispiel26"
@@ -73,14 +73,14 @@ class MHUserActivityManagerTest: XCTestCase {
 				loadImageFromImageInfoCalled = true
 			}
 		}
-		let testObject:BeispielTestObjekt = BeispielTestObjekt()
+		let testObject:ExampleObject = ExampleObject()
 		let testActivityManager = TestUserActivityManager()
 		testActivityManager.addObjectToSearchIndex(testObject)
 		expect(testActivityManager.loadImageFromImageInfoCalled).to(equal(true))
 	}
 	
 	func testSettingAttributesOfAttributeSetCorrectlyOnAddObjectToSearchIndexCompletely() {
-		let testObject:BeispielTestObjekt = BeispielTestObjekt() 
+		let testObject:ExampleObject = ExampleObject() 
 		testObject.mhDomainIdentifier = "com.sowas.tolles.hier"
 		testObject.mhUniqueIdentifier = "1234567891"
 		testObject.mhTitle = "Beispiel26"
