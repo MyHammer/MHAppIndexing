@@ -12,35 +12,42 @@ import MobileCoreServices
 
 let searchItemDaysTillExpiration = 30
 
+
+/// Manager for indexing objects that confirm to protocol **MHCoreSpotlightObject**
+@available(iOS 9.0, *)
 public class MHCoreSpotlightManager: NSObject {
     
+	/// Factory method returning a shared instance of **MHCoreSpotlightManager**
     public static let sharedInstance = MHCoreSpotlightManager()
     
-    override init() {
-        super.init()
-    }
-    
+	/**
+	
+	Adding an object to search index
+	
+	- parameter searchObject: Object that confirms to protocol MHCoreSpotlightObject
+	
+	*/
     public func addObjectToSearchIndex(searchObject: MHCoreSpotlightObject) {
-        var attributes = searchObject.attributeSet
+        var attributes = searchObject.mhAttributeSet
         if attributes == nil {
             attributes = CSSearchableItemAttributeSet(itemContentType: kUTTypeImage as String)
         }
         
-        attributes!.relatedUniqueIdentifier = searchObject.uniqueIdentifier
-        attributes!.title = searchObject.title
-        attributes!.contentDescription = searchObject.contentDescription
-        attributes!.keywords = searchObject.keywords
+        attributes!.relatedUniqueIdentifier = searchObject.mhUniqueIdentifier
+        attributes!.title = searchObject.mhTitle
+        attributes!.contentDescription = searchObject.mhContentDescription
+        attributes!.keywords = searchObject.mhKeywords
 		
-		self.loadImageFromImageInfo(searchObject.imageInfo, attributes:attributes!) { (Void) in
+		self.loadImageFromImageInfo(searchObject.mhImageInfo, attributes:attributes!) { (Void) in
             let expirationDate = self.expirationDateFromSearchObject(searchObject)
-            self.addSearchableItemToCoreSpotlight(searchObject.uniqueIdentifier, domainId: searchObject.domainIdentifier, attributes: attributes!, expirationDate: expirationDate)
+            self.addSearchableItemToCoreSpotlight(searchObject.mhUniqueIdentifier, domainId: searchObject.mhDomainIdentifier, attributes: attributes!, expirationDate: expirationDate)
         }
     }
-    
+	
     func expirationDateFromSearchObject(searchObject: MHCoreSpotlightObject) -> NSDate {
         var expDate: NSDate
         
-        if let soExpDate = searchObject.expirationDate {
+        if let soExpDate = searchObject.mhExpirationDate {
             expDate = soExpDate
         } else {
             let dateNow: NSDate = NSDate()
@@ -56,7 +63,7 @@ public class MHCoreSpotlightManager: NSObject {
         let item: CSSearchableItem = CSSearchableItem(uniqueIdentifier: uniqueIdentifier, domainIdentifier: domainId, attributeSet: attributes)
         item.expirationDate = expirationDate
 
-		CSSearchableIndex.defaultSearchableIndex().indexSearchableItems([item]) { (error: NSError?) -> Void in
+		self.searchableIndex().indexSearchableItems([item]) { (error: NSError?) -> Void in
 			if (error != nil) {
 				NSLog("Search item NOT indexed because error: " + (error?.description)!);
 			} else {
@@ -95,19 +102,10 @@ public class MHCoreSpotlightManager: NSObject {
         }
     }
     
-//    func loadImageAsyncFromURL(imageURL: NSURL, completion: ((resultImage:UIImage?)->Void)?) {
-//        print("Begin loading image async for url: " + String(imageURL))
-//        let priority = DISPATCH_QUEUE_PRIORITY_DEFAULT
-//        dispatch_async(dispatch_get_global_queue(priority, 0), {
-//            var resultImage:UIImage?
-//            let imageData:NSData? = NSData(contentsOfURL: imageURL)
-//            if let data:NSData = imageData {
-//                resultImage = UIImage(data: data)
-//            }
-//            dispatch_async(dispatch_get_main_queue(), {
-//                print("Finished loading image async")
-//                completion?(resultImage: resultImage)
-//            })
-//        })
-//    }
+    // MARK: - Helper methods
+    
+    func searchableIndex() -> CSSearchableIndex {
+        return CSSearchableIndex.defaultSearchableIndex();
+    }
+    
 }

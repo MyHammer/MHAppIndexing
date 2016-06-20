@@ -8,10 +8,11 @@
 
 import UIKit
 
+/// Protocol for objects required by **MHUserActivityManager**. The properies correspond to the properties of **NSUserActivity**.
 public protocol MHUserActivityObject: MHCoreSpotlightObject {
-	var userInfo:[String: NSSecureCoding]? { get }
-	var eligibleForSearch:Bool { get }
-	var eligibleForPublicIndexing:Bool { get }
-	var eligibleForHandoff:Bool { get }
-	var webpageURL:NSURL? { get } // MUST be unique
+	var mhUserInfo:[String: NSSecureCoding]? { get }
+	var mhEligibleForSearch:Bool { get }
+	var mhEligibleForPublicIndexing:Bool { get }
+	var mhEligibleForHandoff:Bool { get }
+	var mhWebpageURL:NSURL? { get } // MUST be unique
 }

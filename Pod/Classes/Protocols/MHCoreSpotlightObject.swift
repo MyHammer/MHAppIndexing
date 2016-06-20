@@ -9,15 +9,17 @@
 import UIKit
 import CoreSpotlight
 
+/// Protocol for objects required by **MHCoreSpotlightManager**. The properies correspond to the properties of **CSSearchableItem** and **CSSearchableItemAttributeSet**.
+@available(iOS 9.0, *)
 @objc public protocol MHCoreSpotlightObject {
 
-    var domainIdentifier: String { get }
-    var uniqueIdentifier: String { get }
-    var title: String { get }
-    var contentDescription: String { get }
-    var keywords: Array<String> { get }
-	var imageInfo: MHImageInfo? { get }
+    var mhDomainIdentifier: String { get }
+    var mhUniqueIdentifier: String { get }
+    var mhTitle: String { get }
+    var mhContentDescription: String { get }
+    var mhKeywords: Array<String> { get }
+	var mhImageInfo: MHImageInfo? { get }
 
-    optional var attributeSet: CSSearchableItemAttributeSet { get }
-    optional var expirationDate:NSDate { get } // default is 30 days when not set
+    optional var mhAttributeSet: CSSearchableItemAttributeSet { get }
+    optional var mhExpirationDate:NSDate { get } // default is 30 days when not set
 }

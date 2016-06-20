@@ -12,9 +12,13 @@ import MobileCoreServices
 
 let userActivityActivationDelay = 2.0
 
+/// Manager for indexing objects that confirm to protocol **MHUserActivityObject**
+@available(iOS 9.0, *)
 public class MHUserActivityManager: NSObject, NSUserActivityDelegate {
 	
+	/// Factory method returning a shared instance of MHUserActivityManager
 	public static let sharedInstance = MHUserActivityManager()
+	
 	var activities: NSMutableArray
     var didStartMakingActivitiesCurrent = false
 	
@@ -23,16 +27,23 @@ public class MHUserActivityManager: NSObject, NSUserActivityDelegate {
 		super.init()
 	}
 	
+	/**
+	
+	Adding an object to search index
+	
+	- parameter searchObject: Object that confirms to protocol MHUserActivityObject
+	
+	*/
 	public func addObjectToSearchIndex(searchObject: MHUserActivityObject) {
-		let activityType = searchObject.domainIdentifier + ":" + searchObject.uniqueIdentifier
-		let userActivity = NSUserActivity(activityType: activityType)
-		userActivity.title = searchObject.title
-		userActivity.userInfo = searchObject.userInfo
-		userActivity.eligibleForSearch = searchObject.eligibleForSearch
-		userActivity.eligibleForPublicIndexing = searchObject.eligibleForPublicIndexing
-		userActivity.eligibleForHandoff = searchObject.eligibleForHandoff
-		userActivity.webpageURL = searchObject.webpageURL
-		if let expDate = searchObject.expirationDate {
+		let activityType = searchObject.mhDomainIdentifier + ":" + searchObject.mhUniqueIdentifier
+		let userActivity = self.createUserActivity(activityType)
+		userActivity.title = searchObject.mhTitle
+		userActivity.userInfo = searchObject.mhUserInfo
+		userActivity.eligibleForSearch = searchObject.mhEligibleForSearch
+		userActivity.eligibleForPublicIndexing = searchObject.mhEligibleForPublicIndexing
+		userActivity.eligibleForHandoff = searchObject.mhEligibleForHandoff
+		userActivity.webpageURL = searchObject.mhWebpageURL
+		if let expDate = searchObject.mhExpirationDate {
 			userActivity.expirationDate = expDate
 		} else {
 			let dateNow: NSDate = NSDate()
@@ -46,16 +57,20 @@ public class MHUserActivityManager: NSObject, NSUserActivityDelegate {
         })
 	}
 	
+	func createUserActivity(activityType:String) -> NSUserActivity {
+		return NSUserActivity(activityType: activityType)
+	}
+	
     func contentAttributeSetFromSearchObject(searchObject: MHUserActivityObject, completion: ((attributeSet:CSSearchableItemAttributeSet)->Void)?) {
-		var attributes = searchObject.attributeSet
+		var attributes = searchObject.mhAttributeSet
         if attributes == nil {
             attributes = CSSearchableItemAttributeSet(itemContentType: kUTTypeImage as String)
         }
-        attributes!.relatedUniqueIdentifier = searchObject.uniqueIdentifier
-		attributes!.title = searchObject.title
-		attributes!.contentDescription = searchObject.contentDescription
-		attributes!.keywords = searchObject.keywords
-        self.loadImageFromImageInfo(searchObject.imageInfo, attributes: attributes!, completion: completion)
+        attributes!.relatedUniqueIdentifier = searchObject.mhUniqueIdentifier
+		attributes!.title = searchObject.mhTitle
+		attributes!.contentDescription = searchObject.mhContentDescription
+		attributes!.keywords = searchObject.mhKeywords
+        self.loadImageFromImageInfo(searchObject.mhImageInfo, attributes: attributes!, completion: completion)
     }
 	
     func loadImageFromImageInfo(imageInfo:MHImageInfo?, attributes:CSSearchableItemAttributeSet, completion:((attributeSet:CSSearchableItemAttributeSet)->Void)?) {
@@ -97,7 +112,7 @@ public class MHUserActivityManager: NSObject, NSUserActivityDelegate {
     func makeFirstActivityCurrent() {
         let firstActivity = self.activities.firstObject
         firstActivity?.becomeCurrent()
-        if let activityTitle = firstActivity?.title {
+        if let activityTitle = firstActivity?.mhTitle {
             NSLog("UserActivity will become current with title: " + activityTitle)
         } else {
             NSLog("UserActivity will become current")
@@ -106,6 +121,13 @@ public class MHUserActivityManager: NSObject, NSUserActivityDelegate {
 	
 	// MARK: - NSUserActivityDelegate methods
 	
+	/**
+	
+	Make next activity to current activity to add it to search index
+	
+	- parameter userActivity: Already indexed activity
+	
+	*/
 	public func userActivityWillSave(userActivity: NSUserActivity) {
         if let activityTitle = userActivity.title {
             NSLog("UserActivity will save with title: " + activityTitle)
