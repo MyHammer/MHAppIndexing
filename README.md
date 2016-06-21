@@ -5,8 +5,10 @@ Easily add content to CoreSpotlight search index.
 ## Usage
 
 There are two ways to add content to CoreSpotlight:
+
 1. Using MHCoreSpotlightManager to index objects directly
 2. Using MHUserActivityManager to index objects via NSUserActivity
+
 In every case the objects must confirm either the protocol MHCoreSpotlightObject or MHUserActivityObject.
 
 Please see example code in project!
@@ -46,8 +48,8 @@ $ pod install
 
 ## Author
 
-Frank Lienkamp, frank.lienkamp@myhammer.net
-Andre Heß, andre.hess@myhammer.net 
+* Frank Lienkamp, frank.lienkamp@myhammer.net
+* Andre Heß, andre.hess@myhammer.net 
 
 ## License
 
