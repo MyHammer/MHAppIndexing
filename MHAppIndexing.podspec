@@ -23,11 +23,11 @@ There are two ways to add content to CoreSpotlight:
 In every case the objects must confirm either the protocol MHCoreSpotlightObject or MHUserActivityObject.
                        DESC
 
-  s.homepage         = "https://github.com/myhammerios/MHAppIndexing"
+  s.homepage         = "https://github.com/MyHammer/MHAppIndexing"
   # s.screenshots     = "www.example.com/screenshots_1", "www.example.com/screenshots_2"
   s.license          = 'Apache License Version 2.0'
   s.author           = { "MyHammer iOS-Team" => "ios-dev@myhammer.net" }
-  s.source           = { :git => "https://github.com/myhammerios/MHAppIndexing.git", :tag => s.version.to_s }
+  s.source           = { :git => "https://github.com/MyHammer/MHAppIndexing.git", :tag => s.version.to_s }
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
   s.platform     = :ios, '8.0'
