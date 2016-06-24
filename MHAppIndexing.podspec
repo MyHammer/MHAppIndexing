@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = "MHAppIndexing"
-  s.version          = "1.0.0"
+  s.version          = "1.0.1"
   s.summary          = "A lib for iOS that makes it easier to add content to CoreSpotlight search index."
 
 # This description is used to generate tags and improve search results.
