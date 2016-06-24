@@ -36,7 +36,7 @@ platform :ios, '9.0'
 use_frameworks!
 
 target 'TargetName' do
-  pod 'MHAppIndexing', '1.0.0'
+  pod 'MHAppIndexing', '1.0.1'
 end
 ```
 
